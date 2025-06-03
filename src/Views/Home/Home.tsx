@@ -11,6 +11,7 @@ import {
 } from "react-icons/si";
 import { TbSql } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import profileImg from "../../assets/profileImg.jpg"
 
 const skills = [
   { icon: <FaHtml5 />, label: "HTML" },
@@ -29,9 +30,15 @@ const skills = [
 
 const Home = () => {
   return (
-    <section className="bg-white text-gray-800 min-h-screen px-6 py-12 md:px-16">
+    <section className="min-h-screen bg-white px-6 py-12 text-gray-800 md:px-16">
       {/* Hero */}
       <div className="mb-12 text-center">
+        {/* Profile Picture */}
+        <img
+          src= {profileImg}
+          alt="Adrienne Daniels"
+          className="mx-auto mb-6 h-50 w-50 rounded-full object-cover shadow-md"
+        />
         <h1 className="mb-4 text-4xl font-bold md:text-5xl">
           Hi, I'm <span className="text-purple-700">Adrienne Daniels</span>
         </h1>
@@ -42,13 +49,13 @@ const Home = () => {
         <div className="mt-6 space-x-4">
           <Link
             to="/portfolio"
-            className="bg-purple-700 text-white hover:bg-purple-800 rounded-xl px-6 py-2 transition"
+            className="rounded-xl bg-purple-700 px-6 py-2 text-white transition hover:bg-purple-800"
           >
             View My Work
           </Link>
           <Link
             to="/contact"
-            className="border-purple-700 hover:bg-purple-100 rounded-xl border px-6 py-2 transition"
+            className="rounded-xl border border-purple-700 px-6 py-2 transition hover:bg-purple-100"
           >
             Contact Me
           </Link>
@@ -74,7 +81,7 @@ const Home = () => {
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="text-gray-600 hover:text-purple-700 flex flex-col items-center transition"
+              className="flex flex-col items-center text-gray-600 transition hover:text-purple-700"
             >
               <div className="mb-1 text-3xl">{skill.icon}</div>
               <span className="text-sm">{skill.label}</span>
