@@ -1,46 +1,88 @@
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3 } from "react-icons/fa";
-import { SiJavascript } from "react-icons/si";
-import { SiTypescript } from "react-icons/si";
-import { DiGithubBadge } from "react-icons/di";
-import { SiFirebase } from "react-icons/si";
+import { FaHtml5, FaCss3Alt, FaGithub } from "react-icons/fa";
+import {
+  SiJavascript,
+  SiTypescript,
+  SiFirebase,
+  SiTailwindcss,
+  SiBootstrap,
+  SiReact,
+  SiNodedotjs,
+  SiPython,
+} from "react-icons/si";
 import { TbSql } from "react-icons/tb";
-import { SiPython } from "react-icons/si";
-import { SiReact } from "react-icons/si";
-import { SiNodedotjs } from "react-icons/si";
-import { SiTailwindcss } from "react-icons/si";
-import { SiBootstrap } from "react-icons/si";
+import { Link } from "react-router-dom";
+
+const skills = [
+  { icon: <FaHtml5 />, label: "HTML" },
+  { icon: <FaCss3Alt />, label: "CSS" },
+  { icon: <SiJavascript />, label: "JavaScript" },
+  { icon: <SiTypescript />, label: "TypeScript" },
+  { icon: <TbSql />, label: "SQL" },
+  { icon: <SiPython />, label: "Python" },
+  { icon: <SiReact />, label: "React" },
+  { icon: <SiNodedotjs />, label: "Node.js" },
+  { icon: <SiTailwindcss />, label: "Tailwind" },
+  { icon: <SiBootstrap />, label: "Bootstrap" },
+  { icon: <SiFirebase />, label: "Firebase" },
+  { icon: <FaGithub />, label: "GitHub" },
+];
 
 const Home = () => {
   return (
-    <>
-      <div className="bg-purple text-offWhite p-4">
-        <h1>Software Engineer</h1>
-        <h2 className="bg-red-500">
-          Welcome, I'm <strong className="text-gold">Adrienne Daniels</strong>! thank you
-          for stopping by my little corner of the internet to learn more about me and check out what I have been building.
-        </h2>
-
-        <h1>&#12296;About Adrienne&#12297;</h1>
-        <p>A versatile full-stack Developer with a knack for crafting innovative projects and solving complex challenges. Beyond my coding prowess, I often explore new destinations or perfect my dance moves on roller skates. With a background that spans various roles and industries, I bring a unique blend of analytical precision and customer-centric thinking to every project. I thrive on collaboration and am eager to contribute my skills to front-end or full-stack engineering teams, bringing energy and expertise to drive impactful results in web development.</p>
-
-        <h1>&#12296;Skills&#12297;</h1>
-        <div className="inline-grid gap-4 grid-cols-3 grid-rows-3 content-center px-4 py-4">
-          <span className="border rounded-lg hover:border-dotted px-4 py-4"><FaHtml5 />HTML</span>
-          <span className="border rounded-lg hover:border-dotted px-4 py-4"><FaCss3 />CSS</span>
-          <span className="border rounded-lg hover:border-dotted px-4 py-4"><SiJavascript />JavaScript</span>
-          <span className="border rounded-lg hover:border-dotted px-4 py-4"><SiTypescript />TypeScript</span>
-          <span className="border rounded-lg hover:border-dotted px-4 py-4"><TbSql />SQL</span>
-          <span className="border rounded-lg hover:border-dotted px-4 py-4"><SiPython />Python</span>
-          <span className="border rounded-lg hover:border-dotted px-4 py-4"><SiReact />React</span>
-          <span className="border rounded-lg hover:border-dotted px-4 py-4"><SiNodedotjs />Node.js</span>
-          <span className="border rounded-lg hover:border-dotted px-4 py-4"><SiTailwindcss />Tailwind</span>
-          <span className="border rounded-lg hover:border-dotted px-4 py-4"><SiBootstrap />Bootstrap</span>
-          <span className="border rounded-lg hover:border-dotted px-4 py-4"><SiFirebase />Firebase</span>
-          <span className="border rounded-lg hover:border-dotted px-4 py-4"><DiGithubBadge />GitHub</span>
+    <section className="bg-white text-gray-800 min-h-screen px-6 py-12 md:px-16">
+      {/* Hero */}
+      <div className="mb-12 text-center">
+        <h1 className="mb-4 text-4xl font-bold md:text-5xl">
+          Hi, I'm <span className="text-purple-700">Adrienne Daniels</span>
+        </h1>
+        <p className="mx-auto max-w-2xl text-lg md:text-xl">
+          A full-stack developer who thrives on building engaging, accessible
+          experiences and collaborating with people who love what they do.
+        </p>
+        <div className="mt-6 space-x-4">
+          <Link
+            to="/portfolio"
+            className="bg-purple-700 text-white hover:bg-purple-800 rounded-xl px-6 py-2 transition"
+          >
+            View My Work
+          </Link>
+          <Link
+            to="/contact"
+            className="border-purple-700 hover:bg-purple-100 rounded-xl border px-6 py-2 transition"
+          >
+            Contact Me
+          </Link>
         </div>
       </div>
-    </>
+
+      {/* About */}
+      <div className="mx-auto mb-12 max-w-3xl text-center">
+        <h2 className="mb-2 text-2xl font-semibold">About Me</h2>
+        <p className="text-gray-700">
+          I’m a versatile developer with a knack for turning ideas into engaging
+          products. When I’m not coding, I’m exploring new destinations or
+          dancing on roller skates. I bring a strong mix of problem-solving and
+          user-first thinking, ready to contribute to teams building awesome web
+          experiences.
+        </p>
+      </div>
+
+      {/* Skills */}
+      <div className="text-center">
+        <h2 className="mb-6 text-2xl font-semibold">Tech Stack</h2>
+        <div className="grid grid-cols-3 justify-items-center gap-6 sm:grid-cols-4 md:grid-cols-6">
+          {skills.map((skill, index) => (
+            <div
+              key={index}
+              className="text-gray-600 hover:text-purple-700 flex flex-col items-center transition"
+            >
+              <div className="mb-1 text-3xl">{skill.icon}</div>
+              <span className="text-sm">{skill.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 

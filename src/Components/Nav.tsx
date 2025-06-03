@@ -7,7 +7,7 @@ const Nav = () => {
 
   return (
     <>
-      <nav>
+      <nav className="bg-lavender">
         <ul>
           {navItems.map((item, index) => (
             <li key={index}>
