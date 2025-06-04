@@ -13,6 +13,7 @@ const About = () => {
   
   return (
     <>
+    <section className= "mt-16">
       <pre className="overflow-x-auto rounded bg-gray-100 p-4 text-left">
         <code>{JSON.stringify(developer, null, 2)}</code>
       </pre>
@@ -25,6 +26,7 @@ const About = () => {
         <p className="ml-4">{`loves: ["UX", "accessibility", "collaboration"]`}</p>
         <p>{`}`}</p>
       </div> */}
+      </section>
     </>
   );
 }

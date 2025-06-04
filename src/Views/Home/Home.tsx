@@ -30,7 +30,7 @@ const skills = [
 
 const Home = () => {
   return (
-    <section className="min-h-screen bg-white px-6 py-12 text-gray-800 md:px-16">
+    <section className="mt-16 min-h-screen bg-white px-6 py-12 text-gray-800 md:px-16">
       {/* Hero */}
       <div className="mb-12 text-center">
         {/* Profile Picture */}
