@@ -35,9 +35,9 @@ const Home = () => {
       <div className="mb-12 text-center">
         {/* Profile Picture */}
         <img
-          src= {profileImg}
+          src={profileImg}
           alt="Adrienne Daniels"
-          className="mx-auto mb-6 h-50 w-50 rounded-full object-cover shadow-md"
+          className="h-50 w-50 mx-auto mb-6 rounded-full object-cover shadow-md"
         />
         <h1 className="mb-4 text-4xl font-bold md:text-5xl">
           Hi, I'm <span className="text-purple-700">Adrienne Daniels</span>
@@ -46,7 +46,9 @@ const Home = () => {
           A full-stack developer who thrives on building engaging, accessible
           experiences and collaborating with people who love what they do.
         </p>
-        <div className="mt-6 space-x-4">
+
+        {/* Call to Action Buttons */}
+        <div className="mt-6 flex flex-col items-center justify-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
           <Link
             to="/portfolio"
             className="rounded-xl bg-purple-700 px-6 py-2 text-white transition hover:bg-purple-800"
