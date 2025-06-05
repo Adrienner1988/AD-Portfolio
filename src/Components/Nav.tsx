@@ -116,8 +116,8 @@ const Nav = () => {
             onClick={() => setIsMobileMenuOpen(false)}
           ></div>
 
-          <div className="absolute right-0 top-0 h-full w-72 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 shadow-2xl">
-            <div className="flex flex-col pt-20">
+          <div className="absolute right-0 top-0 h-full w-72 shadow-2xl">
+            <div className="flex flex-col pt-20 bg-black/50 px-6 py-4">
               {navLinks.map(({ to, label }, index) => (
                 <NavLink
                   key={label}
@@ -126,7 +126,7 @@ const Nav = () => {
                   className={({ isActive }) =>
                     `group relative mx-6 my-2 rounded-xl px-6 py-4 text-lg font-medium transition-all duration-300 hover:scale-105 hover:bg-white/10 ${
                       isActive
-                        ? "bg-white/20 text-purple-300"
+                        ? "bg-white/20 text-purple-200"
                         : "text-white hover:text-purple-300"
                     }`
                   }
