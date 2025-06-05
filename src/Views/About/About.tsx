@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { FaMapMarkerAlt, FaCode, FaCamera } from "react-icons/fa";
 
+import AtGoogle from "../../assets/AtGoogle.jpg";
+import Class from "../../assets/Class.jpg";
+import RollerSkate from "../../assets/RollerSkate.jpg"
+import Skydive from "../../assets/Skydive.jpg";
+
 interface Developer {
   firstName: string;
   lastName: string;
@@ -27,23 +32,23 @@ const developer: Developer = {
 
 const images: ImageData[] = [
   {
-    src: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop",
-    alt: "Coding setup",
+    src: AtGoogle,
+    alt: "Adrienne outside Google NYC",
     icon: FaCode,
   },
   {
-    src: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop",
-    alt: "Roller skating",
+    src: Class,
+    alt: "Adrienne at Google NYC in a classroom with other developers",
     icon: FaCamera,
   },
   {
-    src: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop",
-    alt: "Travel",
+    src: RollerSkate,
+    alt: "Adrienne roller skating in a 70s themed outfit",
     icon: FaCamera,
   },
   {
-    src: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=300&fit=crop",
-    alt: "Tech meetup",
+    src: Skydive,
+    alt: "Adrienne skydiving over the Florida coast",
     icon: FaMapMarkerAlt,
   },
 ];
@@ -54,12 +59,10 @@ const About = () => {
   return (
     <section className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <div className="container mx-auto px-6 py-16">
-
-         {/* Windows Terminal JSON Code Block */}
+        {/* Terminal JSON block */}
         <div className="mb-16 mt-16 flex justify-center">
           <div className="w-full max-w-4xl">
             <div className="animate-scale-in rounded-lg border border-gray-600 bg-slate-900 shadow-2xl">
-              {/* Windows Terminal Header */}
               <div className="flex items-center justify-between rounded-t-lg bg-gray-700 px-4 py-2">
                 <span className="text-sm font-medium text-white">
                   Windows PowerShell
@@ -70,8 +73,6 @@ const About = () => {
                   <div className="h-4 w-4 text-xs text-gray-400">×</div>
                 </div>
               </div>
-
-              {/* Terminal Content */}
               <div className="rounded-b-lg bg-black p-6">
                 <div className="mb-2 font-mono text-sm text-blue-400">
                   PS C:\Users\Adrienne&gt;
@@ -88,18 +89,17 @@ const About = () => {
 };`}
                   </code>
                 </pre>
-            
               </div>
             </div>
           </div>
         </div>
 
-        {/* Photo Grid */}
+        {/* Photo grid */}
         <div className="mb-16 grid grid-cols-2 gap-6 md:grid-cols-4">
           {images.map((image, index) => (
             <div
               key={index}
-              className="group relative aspect-square transform cursor-pointer overflow-hidden rounded-2xl transition-all duration-300 hover:scale-105"
+              className="group relative aspect-auto transform cursor-pointer overflow-hidden rounded-xl transition-all duration-300 hover:scale-105"
               onMouseEnter={() => setHoveredImage(index)}
               onMouseLeave={() => setHoveredImage(null)}
             >
@@ -124,14 +124,12 @@ const About = () => {
           ))}
         </div>
 
-        {/* About Content */}
+        {/* About text content */}
         <div className="mx-auto max-w-4xl">
           <div className="rounded-3xl border border-white/20 bg-white/10 p-8 shadow-2xl backdrop-blur-sm md:p-12">
             <h2 className="mb-8 text-center text-3xl font-bold text-white md:text-4xl">
               About Me
             </h2>
-
-            {/* Story */}
             <div className="space-y-6 leading-relaxed text-slate-200">
               <p className="text-lg">
                 I love being able to bring designer ideas and wireframes to
