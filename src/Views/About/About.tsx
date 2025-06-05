@@ -13,6 +13,7 @@ interface Developer {
   location: string;
   loves: string[];
   hobbies: string[];
+  passionateAbout: string[];
 }
 
 interface ImageData {
@@ -24,10 +25,10 @@ interface ImageData {
 const developer: Developer = {
   firstName: "Adrienne",
   lastName: "Daniels",
-  title: "Full Stack Developer",
-  location: "Tampa, FL",
-  loves: ["UX", "accessibility", "collaboration"],
-  hobbies: ["traveling", "roller skating", "coding for fun"],
+  title: "Software Developer",
+  location: "Florida",
+  passionateAbout: ["UX/UI", "accessibility", "collaboration", "relationship building"],
+  hobbies: ["traveling", "roller skating", "makeup", "personal nail tech"],
 };
 
 const images: ImageData[] = [
