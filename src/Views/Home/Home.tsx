@@ -11,7 +11,7 @@ import {
 } from "react-icons/si";
 import { TbSql } from "react-icons/tb";
 import { Link } from "react-router-dom";
-import profileImg from "../../assets/profileImg.jpg"
+import profileImg from "../../assets/profileImg.jpg";
 
 const skills = [
   { icon: <FaHtml5 />, label: "HTML" },
@@ -30,7 +30,7 @@ const skills = [
 
 const Home = () => {
   return (
-    <section className="mt-16 min-h-screen bg-white px-6 py-12 text-gray-800 md:px-16">
+    <section className="min-h-screen bg-white px-6 py-12 pt-20 text-gray-800 dark:bg-gray-900 dark:text-white md:px-16">
       {/* Hero */}
       <div className="mb-12 text-center">
         {/* Profile Picture */}
@@ -40,7 +40,10 @@ const Home = () => {
           className="h-50 w-50 mx-auto mb-6 rounded-full object-cover shadow-md"
         />
         <h1 className="mb-4 text-4xl font-bold md:text-5xl">
-          Hi, I'm <span className="text-purple-700">Adrienne Daniels</span>
+          Hi, I'm{" "}
+          <span className="text-purple-700 dark:text-purple-400">
+            Adrienne Daniels
+          </span>
         </h1>
         <p className="mx-auto max-w-2xl text-lg md:text-xl">
           A full-stack developer who thrives on building engaging, accessible
@@ -51,13 +54,13 @@ const Home = () => {
         <div className="mt-6 flex flex-col items-center justify-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
           <Link
             to="/portfolio"
-            className="rounded-xl bg-purple-700 px-6 py-2 text-white transition hover:bg-purple-800"
+            className="rounded-xl bg-purple-700 px-6 py-2 text-white transition hover:bg-purple-800 dark:bg-purple-600 dark:hover:bg-purple-700"
           >
             View My Work
           </Link>
           <Link
             to="/contact"
-            className="rounded-xl border border-purple-700 px-6 py-2 transition hover:bg-purple-100"
+            className="rounded-xl border border-purple-700 px-6 py-2 transition hover:bg-purple-100 dark:border-purple-400 dark:hover:bg-purple-800"
           >
             Contact Me
           </Link>
@@ -67,7 +70,7 @@ const Home = () => {
       {/* About */}
       <div className="mx-auto mb-12 max-w-3xl text-center">
         <h2 className="mb-2 text-2xl font-semibold">About Me</h2>
-        <p className="text-gray-700">
+        <p className="text-gray-700 dark:text-gray-300">
           I’m a versatile developer with a knack for turning ideas into engaging
           products. When I’m not coding, I’m exploring new destinations or
           dancing on roller skates. I bring a strong mix of problem-solving and
@@ -83,7 +86,7 @@ const Home = () => {
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-gray-600 transition hover:text-purple-700"
+              className="flex flex-col items-center text-gray-600 transition hover:text-purple-700 dark:text-gray-300 dark:hover:text-purple-400"
             >
               <div className="mb-1 text-3xl">{skill.icon}</div>
               <span className="text-sm">{skill.label}</span>
