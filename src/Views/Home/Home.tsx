@@ -154,7 +154,7 @@ const Home = () => {
                 onMouseLeave={() => setHoveredSkill(null)}
               >
                 <div
-                  className={`cursor-pointer rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:bg-white/20 ${
+                  className={`flex max-w-[140px] cursor-pointer flex-col items-center justify-center rounded-2xl border border-white/20 bg-white/10 p-4 text-center backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:bg-white/20 sm:max-w-[160px] sm:p-6 md:max-w-[180px] ${
                     hoveredSkill === index
                       ? "shadow-2xl shadow-purple-500/20"
                       : "shadow-lg"
@@ -170,7 +170,7 @@ const Home = () => {
                     </div>
                   </div>
 
-                  <span className="text-sm font-medium text-slate-200 transition-colors duration-300 group-hover:text-white">
+                  <span className="whitespace-normal break-words text-sm font-medium text-slate-200 transition-colors duration-300 group-hover:text-white">
                     {skill.label}
                   </span>
                 </div>
