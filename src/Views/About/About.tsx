@@ -1,9 +1,22 @@
-// import workImg from "../../assets/work.jpg";
-// import skateImg from "../../assets/skate.jpg";
-// import travelImg from "../../assets/travel.jpg";
-// import meetupImg from "../../assets/meetup.jpg";
+import { useState } from "react";
+import { FaMapMarkerAlt, FaCode, FaCamera } from "react-icons/fa";
 
-const developer = {
+interface Developer {
+  firstName: string;
+  lastName: string;
+  title: string;
+  location: string;
+  loves: string[];
+  hobbies: string[];
+}
+
+interface ImageData {
+  src: string;
+  alt: string;
+  icon: typeof FaCode;
+}
+
+const developer: Developer = {
   firstName: "Adrienne",
   lastName: "Daniels",
   title: "Full Stack Developer",
@@ -12,73 +25,142 @@ const developer = {
   hobbies: ["traveling", "roller skating", "coding for fun"],
 };
 
+const images: ImageData[] = [
+  {
+    src: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop",
+    alt: "Coding setup",
+    icon: FaCode,
+  },
+  {
+    src: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop",
+    alt: "Roller skating",
+    icon: FaCamera,
+  },
+  {
+    src: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop",
+    alt: "Travel",
+    icon: FaCamera,
+  },
+  {
+    src: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=300&fit=crop",
+    alt: "Tech meetup",
+    icon: FaMapMarkerAlt,
+  },
+];
+
 const About = () => {
+  const [hoveredImage, setHoveredImage] = useState<number | null>(null);
+
   return (
-    <section className="min-h-screen bg-gray-900 text-white">
-      {/* JSON Block */}
-      <div className="flex max-w-full flex-col items-center justify-center gap-8 overflow-x-auto px-6 py-12 md:flex-row">
-        <pre
-          className="max-w-full whitespace-pre-wrap rounded border border-gray-700 bg-gray-900 p-6 font-mono text-green-400 md:max-w-2xl"
-          style={{ whiteSpace: "pre-wrap" }}
-        >
-          <code> const About = () =&gt; {JSON.stringify(developer, null, 2)}</code>
-        </pre>
-      </div>
+    <section className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <div className="container mx-auto px-6 py-16">
 
-      {/* Photo Grid */}
-      <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4 px-6 pb-12 sm:grid-cols-4">
-        <img
-          // src={workImg}
-          alt="Coding setup"
-          className="h-32 w-full rounded object-cover shadow-md sm:h-40"
-        />
-        <img
-          // src={skateImg}
-          alt="Roller skating"
-          className="h-32 w-full rounded object-cover shadow-md sm:h-40"
-        />
-        <img
-          // src={travelImg}
-          alt="Travel"
-          className="h-32 w-full rounded object-cover shadow-md sm:h-40"
-        />
-        <img
-          // src={meetupImg}
-          alt="Tech meetup"
-          className="h-32 w-full rounded object-cover shadow-md sm:h-40"
-        />
-      </div>
+         {/* Windows Terminal JSON Code Block */}
+        <div className="mb-16 mt-16 flex justify-center">
+          <div className="w-full max-w-4xl">
+            <div className="animate-scale-in rounded-lg border border-gray-600 bg-slate-900 shadow-2xl">
+              {/* Windows Terminal Header */}
+              <div className="flex items-center justify-between rounded-t-lg bg-gray-700 px-4 py-2">
+                <span className="text-sm font-medium text-white">
+                  Windows PowerShell
+                </span>
+                <div className="flex items-center gap-1">
+                  <div className="h-4 w-4 border border-gray-400"></div>
+                  <div className="h-4 w-4 border-2 border-gray-400"></div>
+                  <div className="h-4 w-4 text-xs text-gray-400">×</div>
+                </div>
+              </div>
 
-      {/* Written About Section */}
-      <div className="mx-auto max-w-3xl space-y-6 px-6 pb-16 text-lg text-white">
-        <h2 className="mb-2 text-2xl font-bold">About Me</h2>
-        <p>
-          I love being able to bring designer ideas and wireframes to life, and
-          build solutions that solve real problems and help people in meaningful
-          ways.
-        </p>
-        <p>
-          I'm especially excited by projects in travel, entertainment, and
-          hospitality — industries that thrive on creativity and human
-          connection. I enjoy collaborating on fun, engaging teams but also love
-          focused time to work independently, share ideas, and grow.
-        </p>
-        <p>
-          After working in hospitality for over 10 years, I lost my job in 2020
-          and decided to pursue a career that offered more growth and stability.
-          I began self-teaching code, and two years later enrolled in a coding
-          bootcamp to sharpen my skills and take the leap into tech.
-        </p>
-        <p>
-          Outside of work, you’ll probably find me at the skating rink,
-          traveling, exploring the arts, or deep in a makeup or fashion rabbit
-          hole. I also love crafting and have a strong appreciation for
-          creativity in all forms.
-        </p>
-        <p>
-          People often tell me I have a gift for communication and can connect
-          with just about anyone — a quality I think makes me a great teammate.
-        </p>
+              {/* Terminal Content */}
+              <div className="rounded-b-lg bg-black p-6">
+                <div className="mb-2 font-mono text-sm text-blue-400">
+                  PS C:\Users\Adrienne&gt;
+                </div>
+                <pre className="overflow-x-auto font-mono text-sm text-green-400">
+                  <code className="whitespace-pre-wrap">
+                    {`const About = {
+  firstName: "${developer.firstName}",
+  lastName: "${developer.lastName}", 
+  title: "${developer.title}",
+  location: "${developer.location}",
+  loves: [${developer.loves.map((love) => `"${love}"`).join(", ")}],
+  hobbies: [${developer.hobbies.map((hobby) => `"${hobby}"`).join(", ")}]
+};`}
+                  </code>
+                </pre>
+            
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Photo Grid */}
+        <div className="mb-16 grid grid-cols-2 gap-6 md:grid-cols-4">
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="group relative aspect-square transform cursor-pointer overflow-hidden rounded-2xl transition-all duration-300 hover:scale-105"
+              onMouseEnter={() => setHoveredImage(index)}
+              onMouseLeave={() => setHoveredImage(null)}
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div
+                className={`absolute inset-0 bg-gradient-to-t from-purple-900/80 to-transparent transition-opacity duration-300 ${
+                  hoveredImage === index ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="flex items-center gap-2 text-white">
+                    <image.icon className="h-5 w-5" />
+                    <span className="font-medium">{image.alt}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* About Content */}
+        <div className="mx-auto max-w-4xl">
+          <div className="rounded-3xl border border-white/20 bg-white/10 p-8 shadow-2xl backdrop-blur-sm md:p-12">
+            <h2 className="mb-8 text-center text-3xl font-bold text-white md:text-4xl">
+              About Me
+            </h2>
+
+            {/* Story */}
+            <div className="space-y-6 leading-relaxed text-slate-200">
+              <p className="text-lg">
+                I love being able to bring designer ideas and wireframes to
+                life, and build solutions that solve real problems and help
+                people in meaningful ways.
+              </p>
+              <p>
+                I'm especially excited by projects in travel, entertainment, and
+                hospitality — industries that thrive on creativity and human
+                connection. I enjoy collaborating on fun, engaging teams but
+                also love focused time to work independently, share ideas, and
+                grow.
+              </p>
+              <p>
+                After working in hospitality for over 10 years, I lost my job in
+                2020 and decided to pursue a career that offered more growth and
+                stability. I began self-teaching code, and two years later
+                enrolled in a coding bootcamp to sharpen my skills and take the
+                leap into tech.
+              </p>
+              <p>
+                Outside of work, you'll probably find me at the skating rink,
+                traveling, exploring the arts, or deep in a makeup or fashion
+                rabbit hole. I also love crafting and have a strong appreciation
+                for creativity in all forms.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
