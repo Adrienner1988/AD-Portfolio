@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { FaMapMarkerAlt, FaCode, FaCamera } from "react-icons/fa";
-
 import AtGoogle from "../../assets/AtGoogle.jpg";
 import Class from "../../assets/Class.jpg";
-import RollerSkate from "../../assets/RollerSkate.jpg"
+import RollerSkate from "../../assets/RollerSkate.jpg";
 import Skydive from "../../assets/Skydive.jpg";
 
 interface Developer {
@@ -11,9 +10,8 @@ interface Developer {
   lastName: string;
   title: string;
   location: string;
-  loves: string[];
-  hobbies: string[];
   passionateAbout: string[];
+  hobbies: string[];
 }
 
 interface ImageData {
@@ -27,8 +25,13 @@ const developer: Developer = {
   lastName: "Daniels",
   title: "Software Developer",
   location: "Florida",
-  passionateAbout: ["UX/UI", "accessibility", "collaboration", "relationship building"],
-  hobbies: ["traveling", "roller skating", "makeup", "personal nail tech"],
+  passionateAbout: [
+    "UX/UI",
+    "accessibility",
+    "collaboration",
+    "relationship building",
+  ],
+  hobbies: ["traveling", "roller skating", "fashion", "makeup", "personal nail tech"],
 };
 
 const images: ImageData[] = [
@@ -85,7 +88,7 @@ const About = () => {
   lastName: "${developer.lastName}", 
   title: "${developer.title}",
   location: "${developer.location}",
-  loves: [${developer.loves.map((love) => `"${love}"`).join(", ")}],
+  loves: [${developer.passionateAbout.map((passionateAbout) => `"${passionateAbout}"`).join(", ")}],
   hobbies: [${developer.hobbies.map((hobby) => `"${hobby}"`).join(", ")}]
 };`}
                   </code>
