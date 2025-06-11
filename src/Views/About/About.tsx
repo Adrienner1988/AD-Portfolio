@@ -134,7 +134,7 @@ const About = () => {
               className="group relative aspect-auto transform cursor-pointer overflow-hidden rounded-xl transition-all duration-300 hover:scale-105"
               onMouseEnter={() => setHoveredImage(index)}
               onMouseLeave={() => setHoveredImage(null)}
-              onClick={() => openModal(image)} // ✅ modal opens on click
+              onClick={() => openModal(image)} // modal opens on click
             >
               <img
                 src={image.src}
@@ -200,7 +200,7 @@ const About = () => {
         </motion.div>
       </div>
 
-      {/* ✅ Modal rendering */}
+      {/* Modal rendering */}
       {modalData && (
         <AboutModal
           image={modalData.image}
