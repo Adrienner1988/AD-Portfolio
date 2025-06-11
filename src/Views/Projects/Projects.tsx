@@ -77,7 +77,7 @@ const projects: Project[] = [
     github: "https://github.com/Adrienner1988/Homeshield",
     live: "https://homeshield.netlify.app/",
     status: "live",
-    stack: ["React", "TypeScript", "CSS", "Python", "Flask"],
+    stack: ["React", "TypeScript", "CSS", "Python", ""],
   },
 ];
 
