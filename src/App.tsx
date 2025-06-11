@@ -11,8 +11,8 @@ function App() {
   return (
     <>
       <Nav />
+      <Toaster position="top-center" />
       <Routes>
-        <Toaster position="top-center" />
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="projects" element={<Projects />} />

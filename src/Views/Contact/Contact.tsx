@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { FaLinkedin, FaEnvelope, FaDiscord, FaSlack } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -11,7 +12,7 @@ const Contact = () => {
     e.preventDefault();
     if (!formRef.current) return;
 
-    setStatus("Sending...");
+    const toastId = toast.loading("Sending...");
 
     emailjs
       .sendForm(
@@ -22,12 +23,14 @@ const Contact = () => {
       )
       .then(
         () => {
-          setStatus("Message sent successfully!");
+          setStatus("Message sent to Adrienne!");
+          toast.dismiss(toastId);
           formRef.current?.reset();
         },
         (error) => {
           console.error(error);
           setStatus("Failed to send message.");
+          toast.dismiss(toastId);
         },
       );
   };
