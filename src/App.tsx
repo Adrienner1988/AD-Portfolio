@@ -1,16 +1,18 @@
 import "./App.css";
 import Contact from "./Views/Contact/Contact";
 import Home from "./Views/Home/Home";
-import About from "./Views/About/about";
+import About from "./Views/About/About";
 import Projects from "./Views/Projects/Projects";
 import Nav from "./Components/Nav";
 import { Route, Routes } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <>
       <Nav />
       <Routes>
+        <Toaster position="top-center" />
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="projects" element={<Projects />} />
