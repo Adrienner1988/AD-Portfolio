@@ -4,6 +4,8 @@ import AtGoogle from "../../assets/AtGoogle.jpg";
 import Class from "../../assets/Class.jpg";
 import RollerSkate from "../../assets/RollerSkate.jpg";
 import Skydive from "../../assets/Skydive.jpg";
+import AboutModal from "../../Components/AboutModal";
+import { motion } from "framer-motion";
 
 interface Developer {
   firstName: string;
@@ -31,7 +33,13 @@ const developer: Developer = {
     "collaboration",
     "relationship building",
   ],
-  hobbies: ["traveling", "roller skating", "fashion", "makeup", "personal nail tech"],
+  hobbies: [
+    "traveling",
+    "roller skating",
+    "fashion",
+    "makeup",
+    "personal nail tech",
+  ],
 };
 
 const images: ImageData[] = [
@@ -59,9 +67,29 @@ const images: ImageData[] = [
 
 const About = () => {
   const [hoveredImage, setHoveredImage] = useState<number | null>(null);
+  const [modalData, setModalData] = useState<{
+    image: string;
+    title: string;
+    description?: string;
+  } | null>(null);
+
+  const openModal = (image: ImageData) => {
+    setModalData({
+      image: image.src,
+      title: image.alt,
+      description:
+        "This is one of my favorite memories — click around to learn more about what inspires me.",
+    });
+  };
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <motion.section
+      className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="container mx-auto px-6 py-16">
         {/* Terminal JSON block */}
         <div className="mb-16 mt-16 flex justify-center">
@@ -88,8 +116,8 @@ const About = () => {
   lastName: "${developer.lastName}", 
   title: "${developer.title}",
   location: "${developer.location}",
-  loves: [${developer.passionateAbout.map((passionateAbout) => `"${passionateAbout}"`).join(", ")}],
-  hobbies: [${developer.hobbies.map((hobby) => `"${hobby}"`).join(", ")}]
+  loves: [${developer.passionateAbout.map((p) => `"${p}"`).join(", ")}],
+  hobbies: [${developer.hobbies.map((h) => `"${h}"`).join(", ")}]
 };`}
                   </code>
                 </pre>
@@ -106,6 +134,7 @@ const About = () => {
               className="group relative aspect-auto transform cursor-pointer overflow-hidden rounded-xl transition-all duration-300 hover:scale-105"
               onMouseEnter={() => setHoveredImage(index)}
               onMouseLeave={() => setHoveredImage(null)}
+              onClick={() => openModal(image)} // ✅ modal opens on click
             >
               <img
                 src={image.src}
@@ -129,7 +158,13 @@ const About = () => {
         </div>
 
         {/* About text content */}
-        <div className="mx-auto max-w-4xl">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mx-auto max-w-4xl"
+        >
           <div className="rounded-3xl border border-white/20 bg-white/10 p-8 shadow-2xl backdrop-blur-sm md:p-12">
             <h2 className="mb-8 text-center text-3xl font-bold text-white md:text-4xl">
               About Me
@@ -162,9 +197,18 @@ const About = () => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+
+      {/* ✅ Modal rendering */}
+      {modalData && (
+        <AboutModal
+          image={modalData.image}
+          title={modalData.title}
+          onClose={() => setModalData(null)}
+        />
+      )}
+    </motion.section>
   );
 };
 
