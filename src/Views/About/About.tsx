@@ -84,7 +84,7 @@ const About = () => {
 
   return (
     <motion.section
-      className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"
+      className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 px-6 py-10 md:px-20"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}

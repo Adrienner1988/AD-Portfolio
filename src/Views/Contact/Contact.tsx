@@ -36,15 +36,16 @@ const Contact = () => {
   };
 
   return (
-    <section className="contact-section">
     <motion.div
-      className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8 text-white"
+      className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8 px-6 py-10 text-white md:px-20"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
     >
       <div className="mx-auto max-w-3xl">
-        <h1 className="mb-6 mt-16 text-center text-4xl font-bold">Get in Touch</h1>
+        <h1 className="mb-6 mt-16 text-center text-4xl font-bold">
+          Get in Touch
+        </h1>
 
         <form
           ref={formRef}
@@ -112,7 +113,6 @@ const Contact = () => {
         </div>
       </div>
     </motion.div>
-    </section>
   );
 };
 

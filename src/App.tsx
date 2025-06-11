@@ -6,18 +6,21 @@ import Projects from "./Views/Projects/Projects";
 import Nav from "./Components/Nav";
 import { Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   return (
     <>
       <Nav />
       <Toaster position="top-center" />
+      <AnimatePresence mode="wait">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      </AnimatePresence>
     </>
   );
 }
