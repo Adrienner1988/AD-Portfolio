@@ -42,12 +42,12 @@ const iconMap: Record<string, JSX.Element> = {
   // NextJS: <SiNextdotjs />,
   Database: <FaDatabase />,
   Python: <SiPython />, // Placeholder for Python icon
-  Flask: <SiFlask />
+  Flask: <SiFlask />,
 };
 
 import RecipeRainbow1 from "../../assets/RecipeRainbow1.png";
-import US from "../../assets/US.jpg"; 
-import HS from "../../assets/HS.png"; 
+import US from "../../assets/US.jpg";
+import HS from "../../assets/HS.png";
 
 const projects: Project[] = [
   {
@@ -86,8 +86,13 @@ const Projects = () => {
 
   return (
     <section className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 px-6 py-16">
-      <div className="mx-auto max-w-6xl">
-        <h2 className="mb-12 text-center text-4xl font-bold text-white">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="mx-auto max-w-6xl"
+      >
+        <h2 className=" mb-12 mt-12 text-center text-4xl font-bold text-white">
           Projects
         </h2>
 
@@ -153,7 +158,7 @@ const Projects = () => {
             </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* Modal */}
       {activeProject && (
