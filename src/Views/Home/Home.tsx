@@ -9,7 +9,13 @@ import {
   SiReact,
   SiNodedotjs,
   SiPython,
+  SiFramer,
+  SiVite,
+  SiSanity,
+  SiDjango,
 } from "react-icons/si";
+import { VscVscodeInsiders } from "react-icons/vsc";
+import { BiLogoPostgresql } from "react-icons/bi";
 import { TbSql } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
@@ -34,7 +40,13 @@ const skills: Skill[] = [
   { icon: <SiTailwindcss />, label: "Tailwind", color: "text-teal-400" },
   { icon: <SiBootstrap />, label: "Bootstrap", color: "text-purple-500" },
   { icon: <SiFirebase />, label: "Firebase", color: "text-orange-400" },
+  { icon: <SiFramer />, label: "Framer Motion", color: "text-pink-400" },
+  { icon: <SiVite />, label: "Vite", color: "text-yellow-300" },
+  { icon: <SiSanity />, label: "Sanity CMS", color: "text-red-400" },
   { icon: <FaGithub />, label: "GitHub", color: "text-gray-300" },
+  { icon: <VscVscodeInsiders />, label: "VS Code", color: "text-blue-400" },
+  { icon: <SiDjango />, label: "Django", color: "text-green-600" },
+  { icon: <BiLogoPostgresql />, label: "PostgreSQL", color: "text-blue-400" },
 ];
 
 const Home = () => {
@@ -62,7 +74,13 @@ const Home = () => {
   }, [controls, inView]);
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      className="px-6 py-16 md:px-20">
+
       <div className="container mx-auto px-6 py-16">
         {/* Hero Section */}
         <motion.div
@@ -154,31 +172,28 @@ const Home = () => {
                 onMouseLeave={() => setHoveredSkill(null)}
               >
                 <div
-                  className={`flex max-w-[140px] cursor-pointer flex-col items-center justify-center rounded-2xl border border-white/20 bg-white/10 p-4 text-center backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:bg-white/20 sm:max-w-[160px] sm:p-6 md:max-w-[180px] ${
-                    hoveredSkill === index
+                  className={`flex max-w-[140px] cursor-pointer flex-col items-center justify-center rounded-2xl border border-white/20 bg-white/10 p-4 text-center backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:bg-white/20 sm:max-w-[160px] sm:p-6 md:max-w-[180px] ${hoveredSkill === index
                       ? "shadow-2xl shadow-purple-500/20"
                       : "shadow-lg"
-                  }`}
+                    }`}
                 >
                   <div className="mb-3 flex items-center justify-center">
                     <div
-                      className={`text-5xl transition-colors duration-300 ${
-                        hoveredSkill === index ? skill.color : "text-white"
-                      }`}
+                      className={`text-5xl transition-colors duration-300 ${hoveredSkill === index ? skill.color : "text-white"
+                        }`}
                     >
                       {skill.icon}
                     </div>
                   </div>
 
-                  <span className="whitespace-normal break-words text-sm font-medium text-slate-200 transition-colors duration-300 group-hover:text-white">
+                  <span className="font-small whitespace-normal break-words text-sm text-slate-200 transition-colors duration-300 group-hover:text-white">
                     {skill.label}
                   </span>
                 </div>
 
                 <div
-                  className={`pointer-events-none absolute -top-12 left-1/2 -translate-x-1/2 transform rounded-lg bg-black/80 px-3 py-1 text-sm font-medium text-white transition-opacity duration-300 ${
-                    hoveredSkill === index ? "opacity-100" : "opacity-0"
-                  }`}
+                  className={`pointer-events-none absolute -top-12 left-1/2 -translate-x-1/2 transform rounded-lg bg-black/80 px-3 py-1 text-sm font-medium text-white transition-opacity duration-300 ${hoveredSkill === index ? "opacity-100" : "opacity-0"
+                    }`}
                 >
                   {skill.label}
                   <div className="absolute left-1/2 top-full h-0 w-0 -translate-x-1/2 transform border-l-4 border-r-4 border-t-4 border-transparent border-t-black/80"></div>
@@ -188,7 +203,7 @@ const Home = () => {
           </div>
         </motion.div>
       </div>
-    </section>
+  </motion.section>
   );
 };
 

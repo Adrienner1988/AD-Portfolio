@@ -11,13 +11,13 @@ const Projects = () => {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 px-6 py-16">
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="mx-auto max-w-6xl"
-      >
+    <motion.section
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.5 }}
+      className="px-6 py-16 md:px-20">
+
         <h2 className="mb-12 mt-12 text-center text-4xl font-bold text-white">
           Projects
         </h2>
@@ -26,10 +26,6 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
               onClick={() => setActiveProject(project)}
               className="group relative cursor-pointer overflow-hidden rounded-3xl border border-white/20 bg-white/5 shadow-lg backdrop-blur-md transition-all duration-300 hover:shadow-purple-500/20"
             >
@@ -78,17 +74,16 @@ const Projects = () => {
             </motion.div>
           ))}
         </div>
-      </motion.div>
 
-      <AnimatePresence>
-        {activeProject && (
-          <ProjectModal
-            project={activeProject}
-            onClose={() => setActiveProject(null)}
-          />
-        )}
-      </AnimatePresence>
-    </section>
+        <AnimatePresence>
+          {activeProject && (
+            <ProjectModal
+              project={activeProject}
+              onClose={() => setActiveProject(null)}
+            />
+          )}
+        </AnimatePresence>
+      </motion.section>
   );
 };
 

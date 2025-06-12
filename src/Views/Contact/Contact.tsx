@@ -37,14 +37,15 @@ const Contact = () => {
   };
 
   return (
-    <motion.div
-      className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8 px-6 py-10 text-white md:px-20"
+    <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-    >
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      className="px-6 py-16 md:px-20">
+
       <div className="mx-auto max-w-3xl">
-        <h1 className="mb-6 mt-16 text-center text-4xl font-bold">
+        <h1 className="mb-6 mt-16 text-white text-center text-4xl font-bold">
           Get in Touch
         </h1>
 
@@ -69,7 +70,7 @@ const Contact = () => {
           />
           <button
             type="submit"
-            className="mt-2 w-full rounded-md bg-purple-600 px-4 py-2 font-semibold text-white transition hover:bg-purple-700"
+            className="mt-2 w-full rounded-md bg-purple-600 px-4 py-2 font-semibold text-white transition  hover:bg-purple-700"
           >
             Send Message
           </button>
@@ -124,7 +125,7 @@ const Contact = () => {
           </a>
         </div>
       </div>
-    </motion.div>
+    </motion.section>
   );
 };
 
