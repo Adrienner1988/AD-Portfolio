@@ -13,6 +13,8 @@ import {
   SiVite,
   SiSanity,
   SiDjango,
+  SiNetlify,
+  SiRender
 } from "react-icons/si";
 import { VscVscodeInsiders } from "react-icons/vsc";
 import { BiLogoPostgresql } from "react-icons/bi";
@@ -46,7 +48,9 @@ const skills: Skill[] = [
   { icon: <FaGithub />, label: "GitHub", color: "text-gray-300" },
   { icon: <VscVscodeInsiders />, label: "VS Code", color: "text-blue-400" },
   { icon: <SiDjango />, label: "Django", color: "text-green-600" },
-  { icon: <BiLogoPostgresql />, label: "PostgreSQL", color: "text-blue-400" },
+  { icon: <BiLogoPostgresql />, label: "PostgreSQL", color: "text-blue-400" },  
+  { icon: <SiNetlify />, label: "Netlify", color: "text-teal-500" },
+  { icon: <SiRender />, label: "Render", color: "text-purple-500" }
 ];
 
 const Home = () => {

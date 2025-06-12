@@ -74,7 +74,7 @@ const Contact = () => {
           >
             Send Message
           </button>
-          
+
           {status && <p className="text-center text-sm">{status}</p>}
         </form>
 
