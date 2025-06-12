@@ -56,14 +56,14 @@ const ProjectModal = ({ project, onClose }: Props) => {
         transition={{ duration: 0.3 }}
       >
         <button
-          className="absolute right-4 top-4 text-xl text-white transition-colors duration-300 hover:text-red-400"
+          className="absolute right-4 top-4 text-xl text-white transition-colors duration-300 hover:text-pink-400"
           onClick={onClose}
           aria-label="Close modal"
         >
           <FaTimes size={20} />
         </button>
 
-        <h4 className="mb-4 text-2xl font-bold text-white">{project.title}</h4>
+        <h4 className="mb-4 text-2xl font-bold text-purple-400">{project.title}</h4>
 
         <img
           src={project.image}
@@ -81,7 +81,7 @@ const ProjectModal = ({ project, onClose }: Props) => {
 
         <div className="mt-4 flex flex-wrap gap-3">
           {project.tech.map((Icon: IconType, i: number) => (
-            <Icon key={i} className="text-2xl text-white" />
+            <Icon key={i} className="text-2xl text-purple-400" />
           ))}
         </div>
       </motion.div>
