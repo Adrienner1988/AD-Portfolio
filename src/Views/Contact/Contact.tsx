@@ -1,7 +1,8 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { FaLinkedin, FaDiscord, FaSlack } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaDiscord, FaSlack } from "react-icons/fa";
+import { SiIndeed } from "react-icons/si";
 import toast from "react-hot-toast";
 
 const Contact = () => {
@@ -84,6 +85,24 @@ const Contact = () => {
             aria-label="LinkedIn"
           >
             <FaLinkedin />
+          </a>
+          <a
+            href="https://profile.indeed.com/p/adrienned-kxpwg90"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white transition hover:text-purple-400"
+            aria-label="Indeed Resume"
+          >
+            <SiIndeed />
+          </a>
+          <a
+            href="https://github.com/Adrienner1988"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white transition hover:text-purple-400"
+            aria-label="GitHub"
+          >
+            <FaGithub />
           </a>
           <a
             href="https://discordapp.com/users/967326248558809090"
