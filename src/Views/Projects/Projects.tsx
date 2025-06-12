@@ -1,70 +1,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  FaGithub,
-  FaExternalLinkAlt,
-  FaReact,
-  // FaNodeJs,
-  FaCss3Alt,
-  // FaHtml5,
-  // FaDatabase,
-} from "react-icons/fa";
-import {
-  SiTypescript,
-  // SiMongodb,
-  SiTailwindcss,
-  SiFramer,
-  SiPython,
-  // SiFlask,
-} from "react-icons/si";
-import { IconType } from "react-icons";
-
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import ProjectModal from "../../Components/ProjectModal";
-import RecipeRainbow1 from "../../assets/RecipeRainbow1.png";
-import US from "../../assets/US.jpg";
-import HS from "../../assets/HS.png";
+import projects from "../../data/projects";
+import { Project } from "../../data/projects";
 
-interface Project {
-  title: string;
-  description: string;
-  image: string;
-  github: string;
-  live?: string;
-  status?: "live" | "in-progress";
-  tech: IconType[];
-}
 
-const projects: Project[] = [
-  {
-    title: "Urban Stitch",
-    description:
-      "E-commerce platform designed for a proposed fashion and lifestyle brand.",
-    image: US,
-    github: "https://github.com/Adrienner1988/urban-stitch",
-    status: "in-progress",
-    tech: [FaReact, SiTypescript, SiTailwindcss, SiFramer],
-  },
-  {
-    title: "Recipe Rainbow",
-    description:
-      "Discover and share delicious recipes with a vibrant community.",
-    image: RecipeRainbow1,
-    github: "https://github.com/Adrienner1988/Recipe-Blog",
-    live: "https://reciperainbow.netlify.app/",
-    status: "live",
-    tech: [FaReact, SiTypescript, SiTailwindcss, SiFramer],
-  },
-  {
-    title: "HomeShield",
-    description:
-      "Building tools to make home maintenance a little less of a headache!",
-    image: HS,
-    github: "https://github.com/Adrienner1988/Homeshield",
-    live: "https://homeshield.netlify.app/",
-    status: "live",
-    tech: [FaReact, SiTypescript, FaCss3Alt, SiPython],
-  },
-];
 
 const Projects = () => {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
