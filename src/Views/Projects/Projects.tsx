@@ -1,24 +1,28 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FaGithub,
   FaExternalLinkAlt,
-  FaWrench,
   FaReact,
-  FaNodeJs,
+  // FaNodeJs,
   FaCss3Alt,
-  FaHtml5,
-  FaDatabase,
+  // FaHtml5,
+  // FaDatabase,
 } from "react-icons/fa";
 import {
   SiTypescript,
-  // SiNextdotjs,
-  SiMongodb,
+  // SiMongodb,
   SiTailwindcss,
   SiFramer,
   SiPython,
-  SiFlask,
+  // SiFlask,
 } from "react-icons/si";
+import { IconType } from "react-icons";
+
+import ProjectModal from "../../Components/ProjectModal";
+import RecipeRainbow1 from "../../assets/RecipeRainbow1.png";
+import US from "../../assets/US.jpg";
+import HS from "../../assets/HS.png";
 
 interface Project {
   title: string;
@@ -27,27 +31,8 @@ interface Project {
   github: string;
   live?: string;
   status?: "live" | "in-progress";
-  stack: string[];
+  tech: IconType[];
 }
-
-const iconMap: Record<string, JSX.Element> = {
-  React: <FaReact />,
-  TypeScript: <SiTypescript />,
-  Node: <FaNodeJs />,
-  CSS: <FaCss3Alt />,
-  HTML: <FaHtml5 />,
-  MongoDB: <SiMongodb />,
-  Tailwind: <SiTailwindcss />,
-  "Framer Motion": <SiFramer />,
-  // NextJS: <SiNextdotjs />,
-  Database: <FaDatabase />,
-  Python: <SiPython />, // Placeholder for Python icon
-  Flask: <SiFlask />,
-};
-
-import RecipeRainbow1 from "../../assets/RecipeRainbow1.png";
-import US from "../../assets/US.jpg";
-import HS from "../../assets/HS.png";
 
 const projects: Project[] = [
   {
@@ -57,7 +42,7 @@ const projects: Project[] = [
     image: US,
     github: "https://github.com/Adrienner1988/urban-stitch",
     status: "in-progress",
-    stack: ["React", "TypeScript", "Tailwind", "Framer Motion"],
+    tech: [FaReact, SiTypescript, SiTailwindcss, SiFramer],
   },
   {
     title: "Recipe Rainbow",
@@ -67,7 +52,7 @@ const projects: Project[] = [
     github: "https://github.com/Adrienner1988/Recipe-Blog",
     live: "https://reciperainbow.netlify.app/",
     status: "live",
-    stack: ["React", "TypeScript", "Tailwind", "Framer Motion"],
+    tech: [FaReact, SiTypescript, SiTailwindcss, SiFramer],
   },
   {
     title: "HomeShield",
@@ -77,7 +62,7 @@ const projects: Project[] = [
     github: "https://github.com/Adrienner1988/Homeshield",
     live: "https://homeshield.netlify.app/",
     status: "live",
-    stack: ["React", "TypeScript", "CSS", "Python", ""],
+    tech: [FaReact, SiTypescript, FaCss3Alt, SiPython],
   },
 ];
 
@@ -92,11 +77,10 @@ const Projects = () => {
         transition={{ duration: 0.5 }}
         className="mx-auto max-w-6xl"
       >
-        <h2 className=" mb-12 mt-12 text-center text-4xl font-bold text-white">
+        <h2 className="mb-12 mt-12 text-center text-4xl font-bold text-white">
           Projects
         </h2>
 
-        {/* Grid */}
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <motion.div
@@ -118,16 +102,11 @@ const Projects = () => {
                   {project.title}
                 </h3>
                 <p className="text-sm text-slate-300">{project.description}</p>
-
-                {/* Tech Icons */}
                 <div className="flex flex-wrap gap-3 pt-2 text-xl text-purple-400">
-                  {project.stack.map((tech, i) => (
-                    <span key={i} title={tech}>
-                      {iconMap[tech] || <FaWrench />}
-                    </span>
+                  {project.tech.map((Icon, i) => (
+                    <Icon key={i} />
                   ))}
                 </div>
-
                 <div className="mt-4 flex items-center gap-4 text-sm">
                   <a
                     href={project.github}
@@ -150,7 +129,7 @@ const Projects = () => {
                     </a>
                   ) : (
                     <span className="flex items-center gap-2 text-slate-400">
-                      <FaWrench /> In Progress
+                      <FaExternalLinkAlt /> In Progress
                     </span>
                   )}
                 </div>
@@ -160,58 +139,14 @@ const Projects = () => {
         </div>
       </motion.div>
 
-      {/* Modal */}
-      {activeProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
-          <div className="relative w-full max-w-lg rounded-2xl bg-slate-900 p-6 text-white shadow-lg">
-            <button
-              className="absolute right-4 top-4 text-xl text-white"
-              onClick={() => setActiveProject(null)}
-            >
-              ×
-            </button>
-            <h3 className="mb-2 text-2xl font-bold">{activeProject.title}</h3>
-            <p className="mb-4 text-sm text-slate-300">
-              {activeProject.description}
-            </p>
-
-            <img
-              src={activeProject.image}
-              alt={activeProject.title}
-              className="mb-4 w-full rounded-xl object-cover"
-            />
-
-            <div className="mb-4 flex flex-wrap gap-3 text-xl text-purple-400">
-              {activeProject.stack.map((tech, i) => (
-                <span key={i} title={tech}>
-                  {iconMap[tech] || <FaWrench />}
-                </span>
-              ))}
-            </div>
-
-            <div className="flex gap-4">
-              <a
-                href={activeProject.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-purple-300 underline"
-              >
-                GitHub
-              </a>
-              {activeProject.live && (
-                <a
-                  href={activeProject.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-pink-300 underline"
-                >
-                  Live Site
-                </a>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {activeProject && (
+          <ProjectModal
+            project={activeProject}
+            onClose={() => setActiveProject(null)}
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 };

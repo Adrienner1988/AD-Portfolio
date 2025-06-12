@@ -49,14 +49,14 @@ const AboutModal = ({ image, title, onClose }: Props) => {
         transition={{ duration: 0.3 }}
       >
         <button
-          className="absolute right-4 top-4 text-xl text-white hover:text-red-400"
+          className="absolute right-4 top-4 text-xl"
           onClick={onClose}
           aria-label="Close modal"
         >
           <FaTimes size={20} />
         </button>
 
-        <h4 className="mb-4 text-2xl font-bold">{title}</h4>
+        <h4 className="mb-4 text-2xl font-bold text-white">{title}</h4>
 
         <img
           src={image}
