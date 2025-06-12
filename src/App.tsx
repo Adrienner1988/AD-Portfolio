@@ -1,8 +1,9 @@
 import "./App.css";
-import Contact from "./Views/Contact/Contact";
-import Home from "./Views/Home/Home";
-import About from "./Views/About/About";
-import Projects from "./Views/Projects/Projects";
+import { lazy, Suspense } from "react";
+const Contact = lazy(() => import("./Views/Contact/Contact"));
+const Home = lazy(() => import("./Views/Home/Home"));
+const About = lazy(() => import("./Views/About/About"));
+const Projects = lazy(() => import("./Views/Projects/Projects"));
 import Nav from "./Components/Nav";
 import Layout from "./Components/Layout";
 import { Toaster } from "react-hot-toast"
@@ -15,6 +16,7 @@ function App() {
       <Toaster position="top-center" />
       <Nav />
       <AnimatePresence mode="wait">
+        <Suspense fallback={<div className="text-center text-white mt-10">Loading...</div>}>
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -23,6 +25,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </Layout>
+      </Suspense>
       </AnimatePresence>
     </>
   );
