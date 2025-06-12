@@ -1,7 +1,7 @@
 import "./App.css";
 import { lazy, Suspense } from "react";
 const Contact = lazy(() => import("./Views/Contact/Contact"));
-const Home = lazy(() => import("./Views/Home/Home"));
+import Home from "./Views/Home/Home";
 const About = lazy(() => import("./Views/About/About"));
 const Projects = lazy(() => import("./Views/Projects/Projects"));
 import Nav from "./Components/Nav";
@@ -15,8 +15,10 @@ function App() {
     <>
       <Toaster position="top-center" />
       <Nav />
-      <AnimatePresence mode="wait">
-        <Suspense fallback={<div className="text-center text-white mt-10">Loading...</div>}>
+      <AnimatePresence mode="wait" initial={false}>
+        <Suspense fallback={
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-800 to-fuchsia-900">
+    </div>}>
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
