@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { FaLinkedin, FaEnvelope, FaDiscord, FaSlack } from "react-icons/fa";
+import { FaLinkedin, FaDiscord, FaSlack } from "react-icons/fa";
 import toast from "react-hot-toast";
 
 const Contact = () => {
@@ -77,7 +77,7 @@ const Contact = () => {
 
         <div className="flex justify-center gap-6 text-2xl">
           <a
-            href="https://www.linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/adriennerdaniels/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white transition hover:text-purple-400"
@@ -86,14 +86,7 @@ const Contact = () => {
             <FaLinkedin />
           </a>
           <a
-            href="mailto:youremail@example.com"
-            className="text-white transition hover:text-purple-400"
-            aria-label="Email"
-          >
-            <FaEnvelope />
-          </a>
-          <a
-            href="https://discordapp.com/users/yourDiscordID"
+            href="https://discordapp.com/users/967326248558809090"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white transition hover:text-purple-400"
@@ -102,7 +95,7 @@ const Contact = () => {
             <FaDiscord />
           </a>
           <a
-            href="https://slack.com/your-workspace"
+            href="https://adriennedev.slack.com"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white transition hover:text-purple-400"
