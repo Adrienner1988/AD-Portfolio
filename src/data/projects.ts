@@ -40,7 +40,7 @@ export interface Project {
   image: string;
   github: string;
   live?: string;
-  status?: "Live" | "In-progress" | "Completed";
+  status?: "live" | "in-progress" | "completed";
   tech: IconType[];
 }
 
@@ -51,7 +51,7 @@ const projects: Project[] = [
       "E-commerce platform designed for a proposed fashion and lifestyle brand.",
     image: US,
     github: "https://github.com/Adrienner1988/urban-stitch",
-    status: "In-progress",
+    status: "in-progress",
     tech: [
       FaReact,
       SiVite,
@@ -71,7 +71,7 @@ const projects: Project[] = [
     image: RecipeRainbow1,
     github: "https://github.com/Adrienner1988/Recipe-Blog",
     live: "https://reciperainbow.netlify.app/",
-    status: "Live",
+    status: "live",
     tech: [
       FaReact,
       SiVite,
@@ -95,7 +95,7 @@ const projects: Project[] = [
     image: HS,
     github: "https://github.com/Adrienner1988/Homeshield",
     live: "https://homeshield.netlify.app/",
-    status: "Live",
+    status: "live",
     tech: [
       FaReact,
       SiTypescript,
@@ -117,7 +117,7 @@ const projects: Project[] = [
     image: KnowCap,
     github: "https://github.com/Adrienner1988/KnowCap",
     live: "https://homeshield.netlify.app/",
-    status: "Live",
+    status: "live",
     tech: [
       FaReact,
       SiVite,
@@ -139,7 +139,7 @@ const projects: Project[] = [
     image: TinderScreenshot,
     github: "https://github.com/Adrienner1988/tinder-clone",
     live: "https://ad-tinder-clone.netlify.app/",
-    status: "Live",
+    status: "live",
     tech: [
       FaReact,
       SiTypescript,
@@ -160,7 +160,7 @@ const projects: Project[] = [
     github:
       "https://github.com/Adrienner1988/thieves_133_week7_weekend_homework",
     live: "https://ad-weather-api.netlify.app/",
-    status: "Live",
+    status: "live",
     tech: [
       SiJavascript,
       FaHtml5,
@@ -178,7 +178,7 @@ const projects: Project[] = [
     image: ToDo,
     github: "https://github.com/Adrienner1988/To-Do-App",
     live: "https://dolisttracker.netlify.app/",
-    status: "Live",
+    status: "live",
     tech: [
       FaReact,
       SiVite,
@@ -198,7 +198,7 @@ const projects: Project[] = [
     image: Pokemon,
     github: "https://github.com/Adrienner1988/thieves_133_week5_Flask_homework",
     live: "",
-    status: "Completed",
+    status: "completed",
     tech: [
       FaHtml5,
       FaCss3Alt,

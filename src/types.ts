@@ -6,7 +6,7 @@ export interface Project {
   image: string;
   github: string;
   live?: string;
-  status?: "live" | "in-progress";
+  status?: "live" | "in-progress"| "completed";
   tech: IconType[];
 }
 export interface ProjectData {
