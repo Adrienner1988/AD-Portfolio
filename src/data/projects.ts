@@ -1,19 +1,38 @@
-import {
-  FaReact,
-  FaCss3Alt,
-} from "react-icons/fa";
+import { 
+  FaReact, 
+  FaCss3Alt, 
+  FaHtml5, 
+  FaGithub } from "react-icons/fa";
 
 import {
   SiTypescript,
   SiTailwindcss,
   SiFramer,
   SiPython,
+  SiJavascript,
+  SiGooglefonts,
+  SiGoogleforms,
+  SiVite,
+  SiNetlify,
+  SiFlask,
+  SiJinja,
+  SiRender,
+  SiDjango,
+  SiReactrouter,
 } from "react-icons/si";
 
+import { VscVscodeInsiders } from "react-icons/vsc";
+import { BiLogoPostgresql } from "react-icons/bi";
 import { IconType } from "react-icons";
 import RecipeRainbow1 from "../assets/RecipeRainbow1.png";
 import US from "../assets/US.jpg";
 import HS from "../assets/HS.png";
+import TinderScreenshot from "../assets/TinderScreenshot.png";
+import Weather from "../assets/Weather.png";
+import ToDo from "../assets/ToDo.png";
+import KnowCap from "../assets/KnowCap.png";
+import Pokemon from "../assets/Pokemon.jpg";
+
 
 export interface Project {
   title: string;
@@ -21,7 +40,7 @@ export interface Project {
   image: string;
   github: string;
   live?: string;
-  status?: "live" | "in-progress";
+  status?: "Live" | "In-progress" | "Completed";
   tech: IconType[];
 }
 
@@ -32,8 +51,18 @@ const projects: Project[] = [
       "E-commerce platform designed for a proposed fashion and lifestyle brand.",
     image: US,
     github: "https://github.com/Adrienner1988/urban-stitch",
-    status: "in-progress",
-    tech: [FaReact, SiTypescript, SiTailwindcss, SiFramer],
+    status: "In-progress",
+    tech: [
+      FaReact,
+      SiVite,
+      SiTypescript,
+      SiTailwindcss,
+      SiFramer,
+      VscVscodeInsiders,
+      SiGooglefonts,
+      FaGithub,
+      SiNetlify,
+    ],
   },
   {
     title: "Recipe Rainbow",
@@ -42,8 +71,22 @@ const projects: Project[] = [
     image: RecipeRainbow1,
     github: "https://github.com/Adrienner1988/Recipe-Blog",
     live: "https://reciperainbow.netlify.app/",
-    status: "live",
-    tech: [FaReact, SiTypescript, SiTailwindcss, SiFramer],
+    status: "Live",
+    tech: [
+      FaReact,
+      SiVite,
+      SiTypescript,
+      SiTailwindcss,
+      SiFramer,
+      VscVscodeInsiders,
+      SiGooglefonts,
+      FaGithub,
+      SiNetlify,
+      SiRender,
+      SiDjango,
+      SiPython,
+      SiReactrouter,
+    ],
   },
   {
     title: "HomeShield",
@@ -52,8 +95,121 @@ const projects: Project[] = [
     image: HS,
     github: "https://github.com/Adrienner1988/Homeshield",
     live: "https://homeshield.netlify.app/",
-    status: "live",
-    tech: [FaReact, SiTypescript, FaCss3Alt, SiPython],
+    status: "Live",
+    tech: [
+      FaReact,
+      SiTypescript,
+      FaHtml5,
+      FaCss3Alt,
+      SiPython,
+      VscVscodeInsiders,
+      SiGooglefonts,
+      SiGoogleforms,
+      FaGithub,
+      SiNetlify,
+      SiReactrouter,
+    ],
+  },
+  {
+    title: "Know Cap",
+    description:
+      "Building tools to make home maintenance a little less of a headache!",
+    image: KnowCap,
+    github: "https://github.com/Adrienner1988/KnowCap",
+    live: "https://homeshield.netlify.app/",
+    status: "Live",
+    tech: [
+      FaReact,
+      SiVite,
+      SiTypescript,
+      FaHtml5,
+      FaCss3Alt,
+      SiPython,
+      VscVscodeInsiders,
+      SiGooglefonts,
+      FaGithub,
+      SiNetlify,
+      SiReactrouter,
+    ],
+  },
+  {
+    title: "Tinder Clone",
+    description:
+      "A clone of the dating app Tinder that allows users to swipe through profiles and match with potential partners.",
+    image: TinderScreenshot,
+    github: "https://github.com/Adrienner1988/tinder-clone",
+    live: "https://ad-tinder-clone.netlify.app/",
+    status: "Live",
+    tech: [
+      FaReact,
+      SiTypescript,
+      FaHtml5,
+      FaCss3Alt,
+      SiPython,
+      VscVscodeInsiders,
+      SiGooglefonts,
+      FaGithub,
+      SiNetlify,
+    ],
+  },
+  {
+    title: "Whats's the Weather?",
+    description:
+      "A weather app that provides real-time weather information for any location worldwide.",
+    image: Weather,
+    github:
+      "https://github.com/Adrienner1988/thieves_133_week7_weekend_homework",
+    live: "https://ad-weather-api.netlify.app/",
+    status: "Live",
+    tech: [
+      SiJavascript,
+      FaHtml5,
+      FaCss3Alt,
+      VscVscodeInsiders,
+      SiGooglefonts,
+      FaGithub,
+      SiNetlify,
+    ],
+  },
+  {
+    title: "Todo List Tracker",
+    description:
+      "A simple and intuitive todo list application to help you stay organized and productive.",
+    image: ToDo,
+    github: "https://github.com/Adrienner1988/To-Do-App",
+    live: "https://dolisttracker.netlify.app/",
+    status: "Live",
+    tech: [
+      FaReact,
+      SiVite,
+      SiTypescript,
+      FaHtml5,
+      FaCss3Alt,
+      VscVscodeInsiders,
+      SiGooglefonts,
+      FaGithub,
+      SiNetlify,
+    ],
+  },
+  {
+    title: "Pokemon Game",
+    description:
+      "A fun and interactive Pokemon game where players can catch, train, and battle with their favorite Pokemon.",
+    image: Pokemon,
+    github: "https://github.com/Adrienner1988/thieves_133_week5_Flask_homework",
+    live: "",
+    status: "Completed",
+    tech: [
+      FaHtml5,
+      FaCss3Alt,
+      SiPython,
+      SiJinja,
+      SiFlask,
+      BiLogoPostgresql,
+      VscVscodeInsiders,
+      SiGooglefonts,
+      FaGithub,
+    ],
   },
 ];
 
