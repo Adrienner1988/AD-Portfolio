@@ -19,6 +19,7 @@ import {
   SiRender,
   SiDjango,
   SiReactrouter,
+  SiFirebase,
 } from "react-icons/si";
 
 import { VscVscodeInsiders } from "react-icons/vsc";
@@ -83,6 +84,7 @@ const projects: Project[] = [
       FaGithub,
       SiNetlify,
       SiRender,
+      SiFirebase,
       SiDjango,
       SiPython,
       SiReactrouter,
