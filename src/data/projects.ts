@@ -33,6 +33,7 @@ import Weather from "../assets/Weather.png";
 import ToDo from "../assets/ToDo.png";
 import KnowCap from "../assets/KnowCap.png";
 import Pokemon from "../assets/Pokemon.jpg";
+import portfolioImg from "../assets/portfolioImg.png";
 
 
 export interface Project {
@@ -63,6 +64,27 @@ const projects: Project[] = [
       SiGooglefonts,
       FaGithub,
       SiNetlify,
+    ],
+  },
+  {
+    title: "Portfolio Website",
+    description:
+      "A personal portfolio website showcasing my projects and skills.",
+    image: portfolioImg,
+    github: "https://github.com/Adrienner1988/AD-Portfolio",
+    live: "https://adriennerdaniels.netlify.app/",
+    status: "live",
+    tech: [
+      FaReact,
+      SiVite,
+      SiTypescript,
+      SiTailwindcss,
+      SiFramer,
+      VscVscodeInsiders,
+      SiGooglefonts,
+      FaGithub,
+      SiNetlify,
+      SiReactrouter,
     ],
   },
   {
