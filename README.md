@@ -5,7 +5,6 @@
 ## Table of Contents
 
 - [About](#about)
-- [Live Demo](#live-demo)
 - [Tech Stack](#tech-stack)
 - [Getting Started](#getting-started)
 - [Code Example](#code-example)
@@ -21,12 +20,6 @@
 ## 📌 About
 
 This is my personal portfolio site — built with **Vite + React**, **TypeScript**, **Tailwind CSS**, and **Framer Motion** — designed to highlight my skills, showcase projects, and provide an easy way to get in touch. It emphasizes strong UI/UX design, accessible layout, and responsive animation for a clean, engaging experience on any device.
-
----
-
-## 🌐 Live Demo
-
-[Visit Portfolio Website](https://adriennerdaniels.netlify.app/)
 
 ---
 
@@ -93,7 +86,7 @@ npm run dev
 Fully functional, mobile-optimized, and deployed. Ongoing polish and animation upgrades will continue. 
 
 ## Why
-his portfolio represents my growth as a developer, from learning design systems and animations to integrating CMS and full-stack thinking. It’s a playground for building reusable components, trying modern tooling, and turning ideas into interfaces that feel alive.
+This portfolio represents my growth as a developer, from learning design systems and animations to integrating CMS and full-stack thinking. It’s a playground for building reusable components, trying modern tooling, and turning ideas into interfaces that feel alive.
 
 
 ## Contact
